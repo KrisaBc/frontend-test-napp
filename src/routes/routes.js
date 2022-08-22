@@ -8,7 +8,7 @@ const routes = [
         breadcrumb: "Product List / "
     },
     {
-        path: "/product::id",
+        path: "/product/:id",
         element: < ProductDetails />,
     }
 ]

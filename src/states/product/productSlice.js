@@ -3,9 +3,9 @@ import { fetchProducts, fetchProductById } from './fetches';
 
 const initialState = {
     products: [],
-    isProductsLoading: false,
+    isProductsLoading: true,
     productDetail: null,
-    isProductDetailLoading: false,
+    isProductDetailLoading: true,
     productsSearch: '',
 }
 
@@ -13,7 +13,7 @@ export const getProducts = createAsyncThunk(
     'product/getProducts',
     async () => {
         const response = await fetchProducts()
-        return await (response.json())
+        return (response.json())
     }
 )
 
@@ -21,7 +21,7 @@ export const getProductById = createAsyncThunk(
     'product/getProductById',
     async (id) => {
         const response = await fetchProductById(id)
-        return await (response.json())
+        return (response.json())
     }
 )
 

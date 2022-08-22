@@ -5,7 +5,7 @@ import routes from "./routes/routes";
 
 export default function App() {
 
-  let element = useRoutes(
+  const element = useRoutes(
     [
       {
         element: <Layout />,
