@@ -1,13 +1,12 @@
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useParams } from "react-router-dom"
-import { ProductDescription, ProductImage } from "../../components"
-import { useProductDetail, useProductDetailLoading } from "../../states/product/hooks"
+import { ProductDescription, ProductImage, ProductActions } from "../../components"
+import { useProductDetailLoading } from "../../states/product/hooks"
 import { getProductById } from "../../states/product/productSlice"
 
 export function ProductDetails() {
     const dispatch = useDispatch()
-    const productDetail = useProductDetail()
     const isProductDetailLoading = useProductDetailLoading()
 
     const { id: productId } = useParams()
@@ -20,6 +19,7 @@ export function ProductDetails() {
         {isProductDetailLoading ? <p>Loading...</p> : <div>
             <ProductImage />
             <ProductDescription />
+            <ProductActions/>
         </div>
         }
     </>

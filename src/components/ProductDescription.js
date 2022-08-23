@@ -19,7 +19,7 @@ export function ProductDescription() {
         secondaryCmera,
         dimentions,
         weight,
-    } = productDetail || {}
+    } = productDetail 
 
     return <div>
         <h2>Product Description</h2>
@@ -36,10 +36,10 @@ export function ProductDescription() {
             <li>Display Resolution: {displayResolution}</li>
             <li>Display Size: {displaySize}</li>
             <li>Primary Camera:</li>
-            {primaryCamera?.map(value => <dd>
+            {primaryCamera.map(value => <dd key={value}>
                 {value} </dd>)}
             <li>Secondary Camera:</li>
-            {secondaryCmera?.map(value => <dd>
+            {secondaryCmera.map(value => <dd key={value}>
                 {value} </dd>)}
             <li>Price: {price}</li>
         </ul>

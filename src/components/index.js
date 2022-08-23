@@ -4,6 +4,7 @@ import { Layout } from "./Layout";
 import { InputSearch } from "./InputSearch";
 import { ProductImage } from "./ProductImage";
 import { ProductDescription } from "./ProductDescription";
+import { ProductActions } from "./ProductActions";
 
 export {
     Header,
@@ -11,5 +12,6 @@ export {
     Layout,
     InputSearch,
     ProductImage,
-    ProductDescription
+    ProductDescription,
+    ProductActions,
 }
