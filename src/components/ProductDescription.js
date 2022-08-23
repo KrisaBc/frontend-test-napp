@@ -1,5 +1,5 @@
 import { useProductDetail } from "../states/product/hooks";
-
+import { propertyDetail } from "./helpers/propertyDetail";
 
 export function ProductDescription() {
     const productDetail = useProductDetail()
@@ -19,7 +19,7 @@ export function ProductDescription() {
         secondaryCmera,
         dimentions,
         weight,
-    } = productDetail 
+    } = productDetail
 
     return <div>
         <h2>Product Description</h2>
@@ -29,19 +29,18 @@ export function ProductDescription() {
             <li>Dimentions: {dimentions}</li>
             <li>Weight: {weight}</li>
             <li>Operating System: {os}</li>
-            <li>Iternal Memory: {internalMemory}</li>
+            <li>Iternal Memory:</li>
+            {propertyDetail(internalMemory)}
             <li>CPU: {cpu}</li>
             <li>RAM: {ram}</li>
             <li>Battery: {battery}</li>
             <li>Display Resolution: {displayResolution}</li>
             <li>Display Size: {displaySize}</li>
             <li>Primary Camera:</li>
-            {primaryCamera.map(value => <dd key={value}>
-                {value} </dd>)}
+            {propertyDetail(primaryCamera)}
             <li>Secondary Camera:</li>
-            {secondaryCmera.map(value => <dd key={value}>
-                {value} </dd>)}
-            <li>Price: {price}</li>
+            {propertyDetail(secondaryCmera)}
+            <li>Price: {price} {'\u20AC'}</li>
         </ul>
     </div>
 }

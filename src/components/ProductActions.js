@@ -6,9 +6,18 @@ export function ProductActions() {
     const { options } = productDetail || {}
     const { colors, storages } = options || {}
 
-    return <form>
-        <ProductActionsSelector option={colors} name='colors'/>
-        <ProductActionsSelector option={storages} name='colors'/>
-        <button type='submit'>Add To Cart</button>
-    </form>
+    const addProductToCart = event => {
+        event.preventDefault()
+        
+        
+    }
+
+    return <div>
+        <h2>Select the color and storages</h2>
+        <form onSubmit={addProductToCart}>
+            <ProductActionsSelector option={colors} name='colors' />
+            <ProductActionsSelector option={storages} name='storages' />
+            <input type='submit' value='Add To Cart'/>
+        </form>
+    </div>
 }
