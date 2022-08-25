@@ -6,9 +6,9 @@ export function Item({ item }) {
     const goToProductDetail = () => navigate(`/${item.id}`)
 
     return <div onClick={goToProductDetail}>
-        <img src={item.imgUrl} alt='Product Image' />
+        <img src={item.imgUrl} alt='Product Img' />
         <span>{item.brand}</span>
         <span>{item.model}</span>
-        <span>{item.price}</span>
+        <span>{item.price} {'\u20AC'}</span>
     </div>
 }

@@ -6,7 +6,7 @@ const initialState = {
     isProductsLoading: true,
     productDetail: null,
     isProductDetailLoading: true,
-    productsSearch: '',
+    searchedProducts: '',
 }
 
 export const getProducts = createAsyncThunk(
@@ -29,8 +29,8 @@ export const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
-        inputChanged: () => {
-
+        searchedProductsChanged: (state, action) => {
+            state.searchedProducts = action.payload
         },
     },
     extraReducers: (builder) => {
@@ -60,7 +60,7 @@ export const productSlice = createSlice({
     },
 })
 
-export const { inputChanged } = productSlice.actions
+export const { searchedProductsChanged } = productSlice.actions
 
 export default productSlice.reducer
 
