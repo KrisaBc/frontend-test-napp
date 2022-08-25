@@ -9,17 +9,17 @@ export function ProductDetails() {
     const dispatch = useDispatch()
     const isProductDetailLoading = useProductDetailLoading()
 
-    const { id: productId } = useParams()
+    const { id } = useParams()
 
     useEffect(() => {
-        dispatch(getProductById(productId))
+        dispatch(getProductById(id))
     }, [])
 
     return <>
         {isProductDetailLoading ? <p>Loading...</p> : <div>
             <ProductImage />
             <ProductDescription />
-            <ProductActions/>
+            <ProductActions />
         </div>
         }
     </>
