@@ -1,5 +1,5 @@
 import { Header } from "./header/Header";
-import { Item } from "./Item";
+import { ListProductItem } from "./ListProductItem";
 import { Layout } from "./Layout";
 import { InputSearch } from "./InputSearch";
 import { ProductImage } from "./ProductImage";
@@ -8,7 +8,7 @@ import { ProductActions } from "./ProductActions";
 
 export {
     Header,
-    Item,
+    ListProductItem,
     Layout,
     InputSearch,
     ProductImage,

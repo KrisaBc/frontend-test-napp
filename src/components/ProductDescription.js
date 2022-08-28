@@ -1,5 +1,8 @@
 import { useProductDetail } from "../states/product/hooks";
 import { propertyDetail } from "./helpers/propertyDetail";
+import Box from '@mui/material/Box';
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
 
 export function ProductDescription() {
     const productDetail = useProductDetail()
@@ -21,10 +24,9 @@ export function ProductDescription() {
         weight,
     } = productDetail
 
-    return <div>
+    return  <List>
         <h2>Product Description</h2>
-        <ul>
-            <li>Brand: {brand}</li>
+            <ListItem>Brand: {brand}</ListItem>
             <li>Model: {model}</li>
             <li>Dimentions: {dimentions}</li>
             <li>Weight: {weight}</li>
@@ -41,8 +43,7 @@ export function ProductDescription() {
             <li>Secondary Camera:</li>
             {propertyDetail(secondaryCmera)}
             <li>Price: {price} {'\u20AC'}</li>
-        </ul>
-    </div>
+        </List>
 }
 
 
