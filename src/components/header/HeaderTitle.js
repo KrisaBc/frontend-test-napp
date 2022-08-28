@@ -1,22 +1,16 @@
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import { Toolbar, Typography } from '@mui/material';
+import { font } from '../../styles/styles';
 
 export default function HeaderTitle() {
-    return (<Toolbar >
+    return <Toolbar>
         <Typography
             variant="h2"
             noWrap
             component="a"
             href="/"
-            sx={{
-                fontFamily: 'monospace', 
-                fontSize: 20,
-                color: 'inherit',
-                textDecoration: 'none',
-            }}
+            sx={font('inherit', 20, 'monospace')}
         >
             ByUrPhone
         </ Typography>
     </Toolbar >
-    )
 }

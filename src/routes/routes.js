@@ -1,5 +1,13 @@
 import { ProductDetails } from "../views/productDetails/ProductDetails"
 import { ProductList } from "../views/productList/ProductList"
+import { useProductDetail } from "../states/product/hooks"
+
+const ProductDetailsBreadcrumb = () => {
+    const productDetail = useProductDetail()
+    return productDetail ? <span>
+        {`${productDetail.brand} ${productDetail.model}`}
+    </span> : ''
+}
 
 const routes = [
     {
@@ -10,7 +18,7 @@ const routes = [
     {
         path: "/:id",
         element: < ProductDetails />,
-        breadcrumb: "Product Detail"
+        breadcrumb: ProductDetailsBreadcrumb
     }
 ]
 

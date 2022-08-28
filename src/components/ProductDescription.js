@@ -1,8 +1,7 @@
 import { useProductDetail } from "../states/product/hooks";
 import { propertyDetail } from "./helpers/propertyDetail";
-import Box from '@mui/material/Box';
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
+import { List, ListItem, Typography, Container } from '@mui/material'
+import { pink, font } from "../styles/styles"
 
 export function ProductDescription() {
     const productDetail = useProductDetail()
@@ -24,26 +23,31 @@ export function ProductDescription() {
         weight,
     } = productDetail
 
-    return  <List>
-        <h2>Product Description</h2>
-            <ListItem>Brand: {brand}</ListItem>
-            <li>Model: {model}</li>
-            <li>Dimentions: {dimentions}</li>
-            <li>Weight: {weight}</li>
-            <li>Operating System: {os}</li>
-            <li>Iternal Memory:</li>
-            {propertyDetail(internalMemory)}
-            <li>CPU: {cpu}</li>
-            <li>RAM: {ram}</li>
-            <li>Battery: {battery}</li>
-            <li>Display Resolution: {displayResolution}</li>
-            <li>Display Size: {displaySize}</li>
-            <li>Primary Camera:</li>
-            {propertyDetail(primaryCamera)}
-            <li>Secondary Camera:</li>
-            {propertyDetail(secondaryCmera)}
-            <li>Price: {price} {'\u20AC'}</li>
+    return <Container>
+        <Typography variant="h3" sx={font(pink, 16)}>
+            {brand} {model}
+        </Typography>
+        <List sx={font('inherit', 14, 'Helvetica')}>
+            <ListItem  >Dimentions: {dimentions}</ListItem>
+            <ListItem>Weight: {weight}</ListItem>
+            <ListItem>Operating System: {os}</ListItem>
+            <ListItem>Iternal Memory: {propertyDetail(internalMemory)}</ListItem>
+            <ListItem>CPU: {cpu}</ListItem>
+            <ListItem>RAM: {ram}</ListItem>
+            <ListItem>Battery: {battery}</ListItem>
+            <ListItem>Display Resolution:
+                <Typography variant="body" sx={font('inherit', 14, 'Helvetica')}> {displayResolution}</Typography>
+            </ListItem>
+            <ListItem>Display Size: {displaySize}</ListItem>
+            <ListItem>Primary Camera:
+                <Typography variant="body" sx={font('inherit', 14, 'Helvetica')}> {propertyDetail(primaryCamera)}</Typography>
+            </ListItem>
+            <ListItem>Secondary Camera:
+                <Typography variant="body" sx={font('inherit', 14, 'Helvetica')}>{propertyDetail(secondaryCmera)}</Typography>
+            </ListItem>
+            <ListItem>Price: {price ? price : '-'} {'\u20AC'}</ListItem>
         </List>
+    </Container>
 }
 
 
